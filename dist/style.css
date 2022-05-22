@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: rgb(232, 72, 86);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  border: solid white 4px;
+  border-radius: 6px;
+  /* padding: 100px; */
+}
+
+h1 {
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: larger;
+}
