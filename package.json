@@ -20,10 +20,8 @@
     "url": "https://github.com/charliefontanez/team-profiler/issues"
   },
   "homepage": "https://github.com/charliefontanez/team-profiler#readme",
-  "devDependencies": {
-    "jest": "^28.1.0"
-  },
   "dependencies": {
+    "cli": "^1.0.1",
     "inquirer": "^8.2.4"
   }
 }
