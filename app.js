@@ -19,14 +19,14 @@ const promptUser = teamData => {
     {
       type: 'list',
       name: 'position',
-      message: "What is your team member's position?\n",
+      message: "What is your team member's position?",
       choices: ['Manager', 'Engineer', 'Intern']
     },
     {
       type: 'confirm',
-      name: 'confirmAddEnmployee',
+      name: 'confirmAddEmployee',
       message: 'Do you have another employee you would like to add?',
-      default: false
+      default: true
     }
   ])
   .then(data => {
@@ -41,12 +41,16 @@ const promptUser = teamData => {
 };
 
 
-promptUser(teamData = {});
 
-var teamData = ' '
+promptUser(teamData = {})
+  .then(teamData => {
+    return teamData;
+  })
+  .then(teamData => {
+      fs.writeFile("./dist/index.html", generatePage(teamData), err => {
+      if (err) {
+        reject (err);
+      }
+    });
+  })
 
-// fs.writeFile("./dist/index.html", generatePage(teamData), err => {
-//   if (err) {
-//     reject (err);
-//   }
-// });
