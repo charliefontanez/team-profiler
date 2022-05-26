@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generatePage = require('./lib/generatePage.js');
+const generatePage = require('./utils/generatePage.js');
 
 
 
@@ -12,15 +12,28 @@ const promptUser = teamData => {
 
   return inquirer.prompt([
     {
+      type: 'list',
+      name: 'position',
+      message: "What position does your team member hold?",
+      choices: ['Manager', 'Engineer', 'Intern']
+    },
+    {
       tyoe: 'input',
       name: 'name',
       message: "What's the name of your employee?"
     },
     {
-      type: 'list',
-      name: 'position',
-      message: "What is your team member's position?",
-      choices: ['Manager', 'Engineer', 'Intern']
+      type: 'input',
+      name: 'id',
+      message: "What is your employee's id number",
+      validate: idInput => {
+        console.log(idInput.length);
+        for (i = 0; i < idInput.length; i++) {
+          console.log(idInput);
+        }
+        
+        return true;
+      }
     },
     {
       type: 'confirm',

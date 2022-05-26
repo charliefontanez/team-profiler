@@ -12,14 +12,14 @@ const generateProfiles = (teamData) => {
         profileEl = `
         <div class="profile-card">
           <div class="label">
-            <p>${employees[i].name}</p>
-            <p><i class="fas fa-mug-hot"></i> ${employees[i].position}</p>
+            <p>${Manager.name}</p>
+            <p><i class="fas fa-mug-hot"></i> ${Manager.getRole()}</p>
           </div>
           <div class="employee-info-container">
             <div class="employee-info">
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: </P>
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:"></a></p>
-              <p>Office number: </p>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${Manager.id}</P>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${Manager.email}"></a></p>
+              <p>Office number: ${Manager.officeNumber}</p>
             </div>
           </div>
         </div>`;
@@ -28,14 +28,14 @@ const generateProfiles = (teamData) => {
         profileEl = `
         <div class="profile-card">
           <div class="label">
-            <p>${employees[i].name}</p>
-            <p><i class="fas fa-glasses"></i> ${employees[i].position}</p>
+            <p>${Engineer.name}</p>
+            <p><i class="fas fa-glasses"></i> ${Engineer.getRole()}</p>
           </div>
           <div class="employee-info-container">
             <div class="employee-info">
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: </P>
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:"></a></p>
-              <p>Office number: </p>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${Engineer.id}</P>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${Engineer.email}"></a></p>
+              <p>GitHub: <a href="https://github.com/${Engineer.getGithub()}"</p>
             </div>
           </div>
         </div>`;
@@ -44,14 +44,14 @@ const generateProfiles = (teamData) => {
         profileEl = `
         <div class="profile-card">
           <div class="label">
-            <p>${employees[i].name}</p>
-            <p><i class="fas fa-user-graduate"></i> ${employees[i].position}</p>
+            <p>${Intern.name}</p>
+            <p><i class="fas fa-user-graduate"></i> ${Intern.getRole()}</p>
           </div>
           <div class="employee-info-container">
             <div class="employee-info">
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: </P>
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:"></a></p>
-              <p>GitHub: </p>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${Intern.id}</P>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${Intern.email}"></a></p>
+              <p>School: ${Intern.school}</p>
             </div>
           </div>
         </div>`;
