@@ -24,14 +24,23 @@ const promptUser = teamData => {
     },
     {
       type: 'input',
+      name: 'email',
+      message: "What is your employee's email?"
+    },
+    {
+      type: 'input',
       name: 'id',
       message: "What is your employee's id number",
       validate: idInput => {
-        console.log(idInput.length);
+
         for (i = 0; i < idInput.length; i++) {
-          console.log(idInput);
+
+          if (idInput[i] < '0' || idInput[i] > '9') {
+            console.log("please enter a valid number");
+            return false;
+          }
         }
-        
+
         return true;
       }
     },
@@ -43,7 +52,7 @@ const promptUser = teamData => {
     }
   ])
   .then(data => {
-    teamData.employees.push(data);
+    teamData.employeeList.push(data);
     if (data.confirmAddEmployee) {
       return promptUser(teamData);
     }
@@ -54,11 +63,21 @@ const promptUser = teamData => {
 };
 
 
+const promptQuestionsForEmployees = teamData => {
+  var { employees } = teamData.employeeList;
+  for (let i = 0; i < employees.length; i++) {
+    if (employees[i].position = 'Manager') {
+
+    }
+
+
+  }
+}
+
+
 
 promptUser(teamData = {})
-  .then(teamData => {
-    return teamData;
-  })
+  .then(promptQuestionsForEmployees(teamData))
   .then(teamData => {
       fs.writeFile("./dist/index.html", generatePage(teamData), err => {
       if (err) {
