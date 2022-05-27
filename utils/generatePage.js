@@ -1,57 +1,54 @@
-const generateProfiles = (teamData) => {
+const generateProfiles = (employees) => {
   var profiles = [];
-  var employees = teamData.employees;
   var profileEl;
-  console.log("line 6");
-  console.log(teamData);
 
 
-    for (let i = 0; i < (employees).length; i++) {
-
-      if (employees[i].position == 'Manager') {
+    for (let i = 0; i < employees.length; i++) {
+      let employee = employee[i];
+      if (employee.getRole() == 'Manager') {
         profileEl = `
         <div class="profile-card">
           <div class="label">
-            <p>${Manager.name}</p>
-            <p><i class="fas fa-mug-hot"></i> ${Manager.getRole()}</p>
+            <p>${employee.name}</p>
+            <p><i class="fas fa-mug-hot"></i> ${employee.getRole()}</p>
           </div>
           <div class="employee-info-container">
             <div class="employee-info">
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${Manager.id}</P>
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${Manager.email}"></a></p>
-              <p>Office number: ${Manager.officeNumber}</p>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${employee.id}</P>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${employee.email}"></a></p>
+              <p>Office number: ${employee.officeNumber}</p>
             </div>
           </div>
         </div>`;
       }
-      else if (employees[i].position == 'Engineer') {
+      else if (employee.getRole() == 'Engineer') {
         profileEl = `
         <div class="profile-card">
           <div class="label">
-            <p>${Engineer.name}</p>
-            <p><i class="fas fa-glasses"></i> ${Engineer.getRole()}</p>
+            <p>${employee.name}</p>
+            <p><i class="fas fa-glasses"></i> ${employee.getRole()}</p>
           </div>
           <div class="employee-info-container">
             <div class="employee-info">
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${Engineer.id}</P>
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${Engineer.email}"></a></p>
-              <p>GitHub: <a href="https://github.com/${Engineer.getGithub()}"</p>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${employee.id}</P>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${employee.email}"></a></p>
+              <p>GitHub: <a href="https://github.com/${employee.getGithub()}"</p>
             </div>
           </div>
         </div>`;
       }
-      else if (employees[i].position == 'Intern') {
+      else if (employee.getRole() == 'Intern') {
         profileEl = `
         <div class="profile-card">
           <div class="label">
-            <p>${Intern.name}</p>
-            <p><i class="fas fa-user-graduate"></i> ${Intern.getRole()}</p>
+            <p>${employee.name}</p>
+            <p><i class="fas fa-user-graduate"></i> ${employee.getRole()}</p>
           </div>
           <div class="employee-info-container">
             <div class="employee-info">
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${Intern.id}</P>
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${Intern.email}"></a></p>
-              <p>School: ${Intern.school}</p>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${employee.id}</P>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${employee.email}"></a></p>
+              <p>School: ${employee.school}</p>
             </div>
           </div>
         </div>`;
