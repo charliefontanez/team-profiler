@@ -2,10 +2,6 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generatePage = require('./utils/generatePage.js');
 const askEmployeeQuestions = require('./utils/questions.js');
-const Employee = require('./lib/Employee.js');
-const Engineer = require('./lib/Engineer.js');
-const Intern = require('./lib/Intern.js');
-const Manager = require('./lib/Manager.js');
 
 const promptUser = teamData => {
   
@@ -22,7 +18,7 @@ const promptUser = teamData => {
     }
   ])
   .then(data => {
-    return generatePage(data)
+    return askEmployeeQuestions(data);
   })
   .then(addEmployee => {
     if (addEmployee) {

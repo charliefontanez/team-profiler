@@ -4,7 +4,7 @@ const generateProfiles = (employees) => {
 
 
     for (let i = 0; i < employees.length; i++) {
-      let employee = employee[i];
+      let employee = employees[i];
       if (employee.getRole() == 'Manager') {
         profileEl = `
         <div class="profile-card">

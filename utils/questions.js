@@ -1,3 +1,10 @@
+const Employee = require('../lib/Employee.js');
+const Engineer = require('../lib/Engineer.js');
+const Intern = require('../lib/Intern.js');
+const Manager = require('../lib/Manager.js');
+
+const inquirer = require('inquirer');
+
 module.exports = function (data) {  
   if (data.position == 'Manager') {
     return inquirer.prompt([
@@ -16,8 +23,9 @@ module.exports = function (data) {
         name: 'id',
         message: "What is your employee's id number",
         validate: idInput => {
+          console.log(idInput);
           for (i = 0; i < idInput.length; i++) {
-            if (idInput[i] < '0' || idInput[i] > '9') {
+            if (idInput[i] < '0' || idInput[i] > '9' || idInput == '\n') {
               console.log("please enter a valid number");
               return false;
             }
