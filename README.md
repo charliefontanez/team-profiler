@@ -16,3 +16,7 @@ A command line tool that uses Node an Inquirer to generate an html page containi
 
 
 ![image](./images/team-profiler.png)
+
+
+https://user-images.githubusercontent.com/97649021/170786665-22297d63-26d6-4627-b974-19adaf734262.mp4
+
