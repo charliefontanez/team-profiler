@@ -5,6 +5,7 @@ const generateProfiles = (employees) => {
 
     for (let i = 0; i < employees.length; i++) {
       let employee = employees[i];
+      console.log(employee);
       if (employee.getRole() == 'Manager') {
         profileEl = `
         <div class="profile-card">
@@ -15,7 +16,7 @@ const generateProfiles = (employees) => {
           <div class="employee-info-container">
             <div class="employee-info">
               <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${employee.id}</P>
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${employee.email}"></a></p>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${employee.email}">${employee.email}</a></p>
               <p>Office number: ${employee.officeNumber}</p>
             </div>
           </div>
@@ -31,8 +32,8 @@ const generateProfiles = (employees) => {
           <div class="employee-info-container">
             <div class="employee-info">
               <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${employee.id}</P>
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${employee.email}"></a></p>
-              <p>GitHub: <a href="https://github.com/${employee.getGithub()}"</p>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${employee.email}">${employee.email}</a></p>
+              <p>GitHub: <a href="https://github.com/${employee.getGithub()}">${employee.email}</a></p>
             </div>
           </div>
         </div>`;
@@ -46,8 +47,8 @@ const generateProfiles = (employees) => {
           </div>
           <div class="employee-info-container">
             <div class="employee-info">
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${employee.id}</P>
-              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${employee.email}"></a></p>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${employee.id}</p>
+              <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${employee.email}">${employee.email}</a></p>
               <p>School: ${employee.school}</p>
             </div>
           </div>

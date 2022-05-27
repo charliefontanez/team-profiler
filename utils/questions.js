@@ -5,8 +5,8 @@ const Manager = require('../lib/Manager.js');
 
 const inquirer = require('inquirer');
 
-module.exports = function (data) {  
-  if (data.position == 'Manager') {
+module.exports = function (answer) {  
+  if (answer.position == 'Manager') {
     return inquirer.prompt([
       {
         tyoe: 'input',
@@ -23,13 +23,18 @@ module.exports = function (data) {
         name: 'id',
         message: "What is your employee's id number",
         validate: idInput => {
-          console.log(idInput);
-          for (i = 0; i < idInput.length; i++) {
-            if (idInput[i] < '0' || idInput[i] > '9' || idInput == '\n') {
-              console.log("please enter a valid number");
-              return false;
+          if (idInput == '') {
+            return false;
+          }
+          else {
+            for (let i = 0; i < idInput.length; i++) {
+              if (idInput[i] < '0' || idInput[i] > '9') {
+                console.log("\nplease enter a valid number");
+                return false;
+              }
             }
           }
+
           return true;
         }
       },
@@ -50,7 +55,7 @@ module.exports = function (data) {
       return answers.confirmAddEmployee;
     })
   }
-  else if (data.position = 'Engineer') {
+  else if (answer.position == 'Engineer') {
     return inquirer.prompt([
       {
         tyoe: 'input',
@@ -72,12 +77,18 @@ module.exports = function (data) {
         name: 'id',
         message: "What is your employee's id number",
         validate: idInput => {
-          for (i = 0; i < idInput.length; i++) {
-            if (idInput[i] < '0' || idInput[i] > '9') {
-              console.log("please enter a valid number");
-              return false;
+          if (idInput == '') {
+            return false;
+          }
+          else {
+            for (let i = 0; i < idInput.length; i++) {
+              if (idInput[i] < '0' || idInput[i] > '9') {
+                console.log("\nplease enter a valid number");
+                return false;
+              }
             }
           }
+
           return true;
         }
       },
@@ -92,7 +103,7 @@ module.exports = function (data) {
       return answers.confirmAddEmployee;
     })
   }
-  else if (data.position = 'Intern') {
+  else if (answer.position == 'Intern') {
     return inquirer.prompt([
       {
         tyoe: 'input',
@@ -114,12 +125,18 @@ module.exports = function (data) {
         name: 'id',
         message: "What is your employee's id number",
         validate: idInput => {
-          for (i = 0; i < idInput.length; i++) {
-            if (idInput[i] < '0' || idInput[i] > '9') {
-              console.log("please enter a valid number");
-              return false;
+           if (idInput == '') {
+            return false;
+          }
+          else {
+            for (let i = 0; i < idInput.length; i++) {
+              if (idInput[i] < '0' || idInput[i] > '9') {
+                console.log("\nplease enter a valid number");
+                return false;
+              }
             }
           }
+
           return true;
         }
       },

@@ -17,8 +17,8 @@ const promptUser = teamData => {
       choices: ['Manager', 'Engineer', 'Intern']
     }
   ])
-  .then(data => {
-    return askEmployeeQuestions(data);
+  .then(answer => {
+    return askEmployeeQuestions(answer);
   })
   .then(addEmployee => {
     if (addEmployee) {
