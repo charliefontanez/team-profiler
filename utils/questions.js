@@ -99,7 +99,7 @@ module.exports = function (answer) {
         default: true
       }
     ]).then(answers => {
-      teamData.employees.push(new Engineer(answers.name, answers.id, answers.email, "https://github.com/" + answers.github));
+      teamData.employees.push(new Engineer(answers.name, answers.id, answers.email, answers.github));
       return answers.confirmAddEmployee;
     })
   }

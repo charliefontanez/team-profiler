@@ -33,10 +33,11 @@ const generateProfiles = (employees) => {
             <div class="employee-info">
               <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">ID: ${employee.id}</P>
               <p style="border-bottom: solid 1px rgba(55,55,55, 0.4);">Email: <a href="mailto:${employee.email}">${employee.email}</a></p>
-              <p>GitHub: <a href="https://github.com/${employee.getGithub()}">${employee.email}</a></p>
+              <p>GitHub: <a href="https://github.com/${employee.getGithub()}" target="_blank">${employee.github}</a></p>
             </div>
           </div>
         </div>`;
+        console.log
       }
       else if (employee.getRole() == 'Intern') {
         profileEl = `
